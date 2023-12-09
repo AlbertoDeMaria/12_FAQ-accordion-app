@@ -1,0 +1,97 @@
+.container{
+    background-color: $White;
+    padding: 1.5rem;
+
+    display: grid;
+    gap: 1rem;
+    
+    border-radius: 0.5rem;
+
+    @include devices(desktop) {
+        width: 600px;
+        border-radius: 1rem;
+    }
+
+    .container-head {
+        column-gap: 1.5rem;
+        
+        img {
+            max-width: 25px;
+            
+            @include devices(desktop) {
+                max-width: 50px;
+            }
+        }
+
+        @include devices(desktop) {
+            h1 {
+                font-size: 4.5rem;
+            }
+        }
+    }
+
+    .faqs-container{
+
+        .faq {
+            padding: 1.25rem 0;
+
+            display: grid;
+            gap: 1.5rem;
+
+            cursor: pointer;
+
+            border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+
+            &:last-child{
+                border: 0;
+            }
+
+            .faq-head {
+                justify-content: space-between;
+                gap: 1rem;
+
+                @include devices(desktop) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .faq-content {
+                display: none;
+
+                p {
+                    font-size: 0.850rem;
+                    color: rgba($color: #000000, $alpha: 0.6);
+                    
+                    @include devices(desktop) {
+                        font-size: 1.05rem;
+                    }
+                }
+            }
+            
+            &:hover {
+                .faq-head {
+                    
+                    .faq-question {
+                        color: $Grayish_purple;
+                    }
+                }
+            }
+
+            &[data-open="true"]{
+                .faq-content{
+                    display: block;
+                    cursor: auto;
+                }
+
+                &:hover {
+                    .faq-head {
+                    
+                        .faq-question {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

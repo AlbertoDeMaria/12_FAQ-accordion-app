@@ -1,0 +1,21 @@
+body {
+    min-height: 100vh;
+    padding: 2rem;
+
+    display: grid;
+    place-items: center;
+
+    font-family: $ff-primary, sans-serif;
+    font-size: $ff-size;
+    font-weight: $ff-w-normal;
+
+    background-image: url('../assets/background-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: $Light_pink;
+
+    @include devices(tablet) {
+        background-image: url('../assets/background-pattern-desktop.svg');
+
+    }
+}
